@@ -6,13 +6,20 @@ Stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i disch
 
 include '../db/songdb.php';
 
+$songResponse = [];
 $songList = [];
 
 foreach ($songdb as $song) {
-    $songList[] = $song['response'];
+    $songResponse[] = $song['response'];
+};
+
+foreach ($songResponse as $songs) {
+    foreach ($songs as $song) {
+        $songList[] = $song;
+    }
 }
 
-var_dump($songList);
+// var_dump($songList);
 
 ?>
 
@@ -31,8 +38,24 @@ var_dump($songList);
     <div class="d-flex flex-column h-100">
         <?php include '../partials/TheHeader.php' ?>
 
-        <div class="bg_primary flex-grow-1">
+        <div class="bg_primary flex-grow-1 overflow-auto">
+            <div class="container px-5 mt-5">     
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gx-5">
 
+                    <?php foreach ($songList as $song) { ?>
+                        <div class="col mb-4">
+                            <div class="text-center text-white bg_secondary p-4 h-100">
+                                <img src="<?php echo $song['poster'] ?>" alt="" class="song-img">
+                                <h5 class="text-uppercase my-3"><?php echo $song['title'] ?></h5>
+                                <div class="text-secondary"><?php echo $song['author'] ?></div>
+                                <div class="text-secondary"><?php echo $song['year'] ?></div>
+                            </div>
+                        </div>
+                    
+                    <?php } ?>
+
+                </div>
+            </div>    
         </div>
     </div>
     

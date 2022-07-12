@@ -8,3 +8,7 @@
 .bg_primary {
     background-color: #1E2D3B;
 }
+.song-img {
+    max-width: 100%;
+    aspect-ratio: 1/1;
+}
