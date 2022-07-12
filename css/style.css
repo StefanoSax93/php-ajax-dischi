@@ -1,0 +1,10 @@
+.logo {
+    max-width: 50px;
+    aspect-ratio: 1/1;
+}
+.bg_secondary {
+    background-color: #2E3A46;
+}
+.bg_primary {
+    background-color: #1E2D3B;
+}
