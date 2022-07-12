@@ -24,8 +24,14 @@ i dischi a php e li stamperà attraverso vue. -->
         <div class="bg_primary flex-grow-1 overflow-auto">
             <div class="container px-5 mt-5">     
                 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gx-5">
-
-
+                    <div class="col mb-4" v-for="song in songList">
+                        <div class="text-center text-white bg_secondary p-4 h-100">
+                            <img :src="song.poster" :alt="`immagine di ${song.author}`" class="song-img">
+                            <h5 class="text-uppercase my-3">{{song.title}}</h5>
+                            <div class="text-secondary">{{song.author}}</div>
+                            <div class="text-secondary">{{song.year}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>    
         </div>
