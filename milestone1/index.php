@@ -6,20 +6,15 @@ Stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i disch
 
 include '../db/songdb.php';
 
-$songResponse = [];
 $songList = [];
 
-foreach ($songdb as $song) {
-    $songResponse[] = $song['response'];
+foreach ($songdb['response'] as $song) {
+    $songList[] = $song;
 };
 
-foreach ($songResponse as $songs) {
-    foreach ($songs as $song) {
-        $songList[] = $song;
-    }
-}
 
-// var_dump($songList);
+
+//var_dump($songList);
 
 ?>
 
@@ -29,7 +24,7 @@ foreach ($songResponse as $songs) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue dischi php</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous'/>
     <link rel="stylesheet" href="../css/style.css">
 </head>
