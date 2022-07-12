@@ -7,7 +7,7 @@ new Vue({
         axios.
         get("api/songList.php")
         .then(resp => {
-            this.songList = resp.data;
+            this.songList = resp.data.response;
 
             console.log(this.songList);
         })
