@@ -6,11 +6,11 @@
     $datiFiltrati = $songdb["response"];
 
     if($filtroGenere) {
-        $datiFiltrati = array_filter($songdb["response"], function($song) use ($filtroGenere) {
-            return $song["genre"] === $filtroGenere;
+        $datiFiltrati = array_filter($datiFiltrati, function($song) use ($filtroGenere) {
+            return strtolower($song["genre"]) === $filtroGenere;
         });
     } 
-
+    
 
     header("Content-Type: application/json");
     
